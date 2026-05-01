@@ -1,0 +1,93 @@
+.custom-alert-overlay {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    animation: slideInRight 0.4s ease-out;
+  }
+  
+  .custom-alert-overlay.success .custom-alert {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+  }
+  
+  .custom-alert-overlay.error .custom-alert {
+    background: linear-gradient(135deg, #f56565, #e53e3e);
+  }
+  
+  .custom-alert-overlay.warning .custom-alert {
+    background: linear-gradient(135deg, #ed8936, #dd6b20);
+  }
+  
+  .custom-alert {
+    min-width: 350px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    backdrop-filter: blur(10px);
+  }
+  
+  .alert-icon {
+    font-size: 28px;
+  }
+  
+  .alert-message {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  
+  .alert-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+  }
+  
+  .alert-close:hover {
+    opacity: 1;
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOutRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  
+  .custom-alert.exit {
+    animation: slideOutRight 0.3s ease-out forwards;
+  }
+  
