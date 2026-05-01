@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Registration.css';
+
 import './CustomAlert.css';
+import { FaVoteYea } from "react-icons/fa";
 
 function Registration() {
   const [name, setName] = useState('');
@@ -76,8 +78,13 @@ function Registration() {
 
   return (
     <div className="registration-page">
+         
       <div className="registration-container">
+        
         <div className="registration-form">
+        <h1 className="project-title">
+            <FaVoteYea className="vote-icon" /> Voter Application
+          </h1>
           <h2>Register</h2>
           
           {error && (
