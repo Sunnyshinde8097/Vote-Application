@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './login.css';
 import { useNavigate } from 'react-router-dom';
+import { FaVoteYea } from "react-icons/fa";
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -47,8 +48,13 @@ function Login() {
 
   return (
     <div className="login-page">
+      
       <div className="login-container">
+   
         <div className="login-form">
+        <h1 className="project-title">
+            <FaVoteYea className="vote-icon" /> Voter Application
+          </h1>
           <h2>Login</h2>
           
           {error && (
@@ -73,7 +79,7 @@ function Login() {
             <div className="form-group">
               <label htmlFor="txtPassword">Password</label>
               <input
-                type="tel"
+                type="password"
                 id="txtPassword"
                 placeholder="Enter Password"
                 value={password}
